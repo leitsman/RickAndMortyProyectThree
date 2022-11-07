@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div className="App">
+        <header className="header">
+            <img src={logo} alt="icon" />
+            <div className="header--search-button">
+                <input type="text" placeholder="Introduzca una ubicacion del 1 al 126" className="search--input" />
+                <button>Search</button>
+            </div>
+        </header>
+        <main className="main">
+            <div className="content--details-location">
+                <span>
+                    <b>Nombre: </b>SpaceStation
+                </span>
+                <span>
+                    <b>Tipo: </b>Sin Informacion
+                </span>
+                <span>
+                    <b>Dimension: </b> sin Detalle
+                </span>
+                <span>
+                    <b>Poblacion: </b>100
+                </span>
+            </div>
+            {/* =========== CARDS =============== */}
+            <ul className="Container-list--ul">
+                <li className="content-cards">
+                    <img src={adjudicador} alt="results" className="card--img" />
+                    <span className="card--status-character">Sin Informacion</span>
+                    <div className="content--cards-details">
+                        <h3>adjudicador rick</h3>
+                        <b>RAZA</b>
+                        <span>humano</span>
+                        <b>ORIGEN</b>
+                        <span>Sin Informacion</span>
+                        <b>APARICION EN EPISODIOS</b>
+                        <span>1</span>
+                    </div>
+                </li>
+            </ul>
+        </main>
+    </div>
+</body>
+
+</html>

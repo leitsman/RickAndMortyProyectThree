@@ -1,21 +1,38 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
+import UseBoolean from "../hooks/UseBoolean";
+import Loader from "./Loader";
+import SearchLocate from "./SearchLocate";
 
 const ConsumeApi = () => {
+  // ================Boolean hook ==============
+  const { Boolean: StateLoader, setBoolean: setStateLoader } =
+    UseBoolean(false);
+  // ================ request Api ===============
   const [RickApi, setRickApi] = useState();
+  // ================ Number id ===============
+  let randomId = Math.floor(Math.random() * 125) + 1;
+  const [Number, setNumber] = useState(randomId);
   useEffect(() => {
-    let randomId = Math.floor(Math.random() * 125) + 1;
     axios
-      .get(`https://rickandmortyapi.com/api/location/${randomId}`)
-      .then((res) => setRickApi(res.data));
-  }, []);
-  console.log(RickApi);
+      .get(`https://rickandmortyapi.com/api/location/${Number}`)
+      .then((res) => {
+        setRickApi(res.data);
+        setStateLoader(true);
+      });
+  }, [Number]);
+  // console.log(RickApi);
   // ================ LOADING/HEADER ===================
   // const SwitchLoader = () => {
-  //   RickApi === undefined ? <frameElement/> : console.log(false);
+  //   RickApi && StateLoader ? <Header /> : <Loader />;
   // };
-  // return <div>{SwitchLoader()}</div>;
+  return (
+    <>
+      {/* {!StateLoader && <Loader />} */}
+      {StateLoader && <SearchLocate RickApi={RickApi} setNumber={setNumber} />}
+    </>
+  );
 };
 
 export default ConsumeApi;

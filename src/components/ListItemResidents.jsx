@@ -6,7 +6,7 @@ const ListItemResidents = ({ element }) => {
   useEffect(() => {
     axios.get(element).then((res) => setResidents(res.data));
   }, []);
-  console.log(Residents);
+  //   console.log(Residents);
   const StatusCharacter = () => {
     return Residents.status === "Alive" ? (
       <>

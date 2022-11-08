@@ -22,14 +22,9 @@ const ConsumeApi = () => {
         setStateLoader(true);
       });
   }, [Number]);
-  // console.log(RickApi);
-  // ================ LOADING/HEADER ===================
-  // const SwitchLoader = () => {
-  //   RickApi && StateLoader ? <Header /> : <Loader />;
-  // };
   return (
     <>
-      {/* {!StateLoader && <Loader />} */}
+      {!StateLoader && <Loader />}
       {StateLoader && <SearchLocate RickApi={RickApi} setNumber={setNumber} />}
     </>
   );

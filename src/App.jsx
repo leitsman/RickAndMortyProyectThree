@@ -1,7 +1,6 @@
 import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import adjudicador from "./assets/adjudicador.png";
 import ConsumeApi from "./components/ConsumeApi";
 import Loader from "./components/Loader";
 import Header from "./components/Header";

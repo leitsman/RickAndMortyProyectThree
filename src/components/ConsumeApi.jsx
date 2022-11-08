@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useEffect } from "react";
-import UseBoolean from "../hooks/UseBoolean";
+import UseBoolean from "../hooks/useBoolean";
 import Loader from "./Loader";
 import SearchLocate from "./SearchLocate";
 
